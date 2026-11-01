@@ -676,3 +676,41 @@ footer span {
   .hero { min-height: 190px; }
   .card { min-height: 175px; }
 }
+
+/* ============================================================
+   V5 — CLEAN ARTWORK + RESTORED CALL TO ACTION
+   Both automotive photos are cropped to remove embedded text.
+   ============================================================ */
+.auto-title::before {
+  background-position: right center;
+  background-size: auto 125%;
+}
+.auto-title::after {
+  background: linear-gradient(90deg,
+    #061326 0%, #061326 39%, #061326ed 52%,
+    #06132680 69%, #06132600 90%);
+}
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+.hero-copy .primary { flex-shrink: 0; cursor: pointer; }
+.hero-art { background-position: center center; }
+@media (min-width: 1251px) and (min-height: 700px) {
+  .hero { height: clamp(185px, 25vh, 230px); }
+  .hero-copy { padding: 12px 26px; }
+  .hero h2 { font-size: clamp(28px, 2.7vw, 40px); margin: 5px 0; }
+  .hero p { margin: 3px 0 8px; line-height: 1.25; max-width: 680px; }
+  .hero .primary { padding: 7px 13px; font-size: 12px; }
+  .auto-title { height: clamp(125px, 17vh, 160px); }
+  .card { height: clamp(125px, 16vh, 155px); }
+  .card-icon { margin-bottom: 3px; }
+  .card h4 { margin-bottom: 3px; }
+  .card p { margin-bottom: 8px; }
+}
+@media (max-width: 800px) {
+  .hero-copy { padding: 18px; }
+}
