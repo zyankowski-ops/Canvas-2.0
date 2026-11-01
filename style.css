@@ -531,3 +531,82 @@ footer span {
 :fullscreen .sidebar {
   min-height:100vh
 }
+
+
+/* ============================================================
+   CANVAS 2.0 — AUTOMOTIVE EDITION / V3
+   Uses artwork cropped from the approved automotive mockup.
+   ============================================================ */
+.auto-title {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 230px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 22px 36px;
+  margin: 14px 0 18px;
+  border-radius: 14px;
+  background: #06152a;
+}
+.auto-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background: url("assets/auto-shop.jpg") right center / auto 125% no-repeat;
+}
+.auto-title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #061326 0%, #061326 30%, #061326df 48%, #06132625 78%, #06132618 100%);
+}
+.auto-title h1 {
+  margin: 4px 0;
+  font-size: clamp(48px, 6.5vw, 104px);
+  line-height: 1;
+  text-shadow: 0 5px 22px #000b;
+}
+.auto-title .eyebrow { color: #35c9ff; }
+.auto-title p { font-size: clamp(11px, 1.2vw, 15px); }
+.hero {
+  min-height: 270px;
+  border: 2px solid #05b9ff;
+  box-shadow: 0 0 20px #00aeff35, inset 0 0 30px #007ddc15;
+}
+.hero-copy { padding: 28px 34px; }
+.hero-art {
+  width: 43%;
+  background: linear-gradient(90deg, #082245, #08224500 35%),
+              url("assets/diagnostics.jpg") center center / cover no-repeat;
+}
+.hero-art-caption {
+  right: 15px;
+  bottom: 12px;
+  background: #06172dbb;
+  padding: 6px 8px;
+  border-radius: 4px;
+  color: #b9e9ff;
+}
+.brand-mark { text-shadow: 0 0 16px #00baff88; }
+.card { transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-5px); }
+@media (max-width: 1050px) {
+  .auto-title { min-height: 190px; }
+  .auto-title::before { background-size: auto 110%; }
+  .hero-art { width: 38%; }
+}
+@media (max-width: 800px) {
+  .auto-title { padding: 24px; min-height: 185px; }
+  .auto-title::before { opacity: .6; }
+  .auto-title::after { background: linear-gradient(90deg,#061326 0%,#061326d9 65%,#06132655 100%); }
+  .hero-art { display: none; }
+  .hero-copy { padding: 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card { transition: none; }
+}
