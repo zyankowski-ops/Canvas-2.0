@@ -720,3 +720,50 @@ footer span {
 .card h4 { margin: 0; font-size: clamp(16px, 1.2vw, 20px); line-height: 1.22; }
 .card-icon { margin-bottom: 12px; }
 @media (max-width: 700px) { .card { height: 145px; min-height: 145px; } }
+
+/* ============================================================
+   V7 — CANVAS EMBED LAYOUT REFINEMENTS
+   Align content to the top and give navigation cards more space.
+   ============================================================ */
+/* The old margin:auto centered the entire main column vertically
+   when the iframe was taller than its contents. */
+.main {
+  margin: 0 auto;
+}
+
+/* More substantial, presentation-friendly launch cards. */
+.card {
+  height: clamp(190px, 23vh, 220px);
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 18px;
+}
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+.card h4 {
+  font-size: clamp(17px, 1.3vw, 21px);
+  line-height: 1.2;
+  margin: 0;
+}
+.card-arrow {
+  width: 30px;
+  height: 30px;
+  right: 12px;
+  bottom: 12px;
+}
+.section-heading {
+  margin-top: 16px;
+  margin-bottom: 11px;
+}
+/* On narrower embedded Canvas views, allow natural wrapping/scrolling. */
+@media (max-width: 1250px) {
+  .card { min-height: 185px; height: auto; }
+}
+@media (max-width: 700px) {
+  .card { min-height: 160px; padding: 18px; }
+}
