@@ -378,6 +378,14 @@
     </footer>
 </main>
 </div>
+
+<!-- Assessment screenshot zoom viewer -->
+<div id="impactLightbox" class="impact-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged assessment screenshot" hidden>
+  <button id="impactZoomClose" class="impact-lightbox-close" type="button" aria-label="Close enlarged image">✕ Close</button>
+  <img id="impactZoomImage" alt="" />
+  <p id="impactZoomCaption"></p>
+</div>
+
 <script>
    const sections={vision:['THE VISION','Beyond the Traditional LMS','What if Canvas could serve as the central hub for an entire CTE program?','◎','The Canvas 2.0 Concept','A connected classroom experience: instruction, student engagement, operations, and custom-built tools in one familiar place.'],instruction:['INSTRUCTION & CURRICULUM','Instruction That Connects','Daily agendas, Daily Reader activities, Electude lessons, Canvas assessments, and industry-aligned curriculum.','▤','Live Demonstration Coming','We will connect real instructional resources from the Automotive Technology program here.'],learning:['INTERACTIVE LEARNING','Learning by Doing','Real-world decisions and interactive experiences that go beyond a conventional quiz.','◇','Featured Project: Choices','An interactive professional decision-making game built for the Automotive Technology classroom.'],management:['CLASSROOM MANAGEMENT','Accountability by Design','Purpose-built tools that help students practice the routines and responsibilities of a working shop.','☑','Timeclock + Toolbox Inventory','Explore how daily time tracking and tool accountability connect classroom expectations to professional habits.'],automation:['AUTOMATION & INTEGRATION','One Connected Ecosystem','Canvas, GitHub Pages, Google Apps Script, and Sheets working together to support classroom operations.','⬡','Behind the Scenes','We will map the connections and demonstrate the instructor-facing tools that keep the system running.'],ai:['AI IN THE CLASSROOM','From Idea to Implementation','The instructor defines the problem and evaluates the solution. AI helps with design, code, content, and troubleshooting.','✦','AI as a Development Partner','See how iterative prompting, testing, and instructor verification helped turn classroom ideas into functioning applications.'],impact:['PROGRAM IMPACT','What Changes in Practice?','A look at instructional efficiency, student access, accountability, and opportunities for continuous improvement.','▥','Evidence & Outcomes','We will add verified examples and results here rather than claiming improvements without supporting evidence.'],future:["WHAT'S NEXT?",'Your Classroom, Reimagined','The same approach can be adapted for other CTE programs and classroom challenges.','➜','Start with a Problem','What is one repetitive task, instructional challenge, or student experience you would redesign?']};const order=['dashboard','vision','course','instruction','learning','management','automation','ai','impact','future'];function showView(id){if(id!=='dashboard'&&id!=='course'&&!sections[id])id='dashboard';document.getElementById('dashboard').classList.toggle('active',id==='dashboard');document.getElementById('detailView').classList.toggle('active',id!=='dashboard'&&id!=='vision'&&id!=='instruction'&&id!=='course'&&id!=='learning'&&id!=='management'&&id!=='automation'&&id!=='impact');document.getElementById('visionView').classList.toggle('active',id==='vision');document.getElementById('courseView').classList.toggle('active',id==='course');document.getElementById('instructionView').classList.toggle('active',id==='instruction');document.getElementById('learningView').classList.toggle('active',id==='learning');document.getElementById('managementView').classList.toggle('active',id==='management');document.getElementById('automationView').classList.toggle('active',id==='automation');document.getElementById('impactView').classList.toggle('active',id==='impact');document.querySelectorAll('.nav-link').forEach(b=>{b.classList.toggle('active',b.dataset.view===id);b.setAttribute('aria-current',b.dataset.view===id?'page':'false')});if(id!=='dashboard'&&id!=='vision'&&id!=='instruction'&&id!=='course'&&id!=='learning'&&id!=='management'&&id!=='automation'&&id!=='impact'){let d=sections[id];['detailEyebrow','detailTitle','detailIntro','detailSymbol','detailPanelTitle','detailBody'].forEach((key,i)=>document.getElementById(key).textContent=d[i]);document.getElementById('nextBtn').dataset.view=order[(order.indexOf(id)+1)%order.length]}document.getElementById('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});location.hash=id}document.addEventListener('click',e=>{const btn=e.target.closest('[data-view]');if(btn)showView(btn.dataset.view)});document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));document.getElementById('presentBtn').addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen()}else{await document.documentElement.requestFullscreen()}}catch(e){alert('Fullscreen is unavailable in this browser or embedded view. Open the site in a new tab to present.')}});window.addEventListener('hashchange',()=>{let id=location.hash.slice(1)||'dashboard';showView(id)});showView(location.hash.slice(1)||'dashboard');
   
@@ -407,6 +415,23 @@ document.getElementById('tourPrevious').addEventListener('click',()=>{tourIndex=
 document.getElementById('tourNext').addEventListener('click',()=>{tourIndex=(tourIndex+1)%tourSlides.length;renderTour()});
 document.getElementById('tourHotspot').addEventListener('click',()=>{if(tourIndex<tourSlides.length-1){tourIndex++;renderTour()}});
 renderTour();
+
+// Click any Program Impact screenshot to enlarge; Escape or backdrop closes it.
+(()=>{
+ const box=document.getElementById('impactLightbox');
+ const large=document.getElementById('impactZoomImage');
+ const caption=document.getElementById('impactZoomCaption');
+ const close=document.getElementById('impactZoomClose');
+ let priorFocus=null;
+ function hide(){box.hidden=true;document.body.classList.remove('impact-zoom-open');large.removeAttribute('src');if(priorFocus)priorFocus.focus();}
+ document.querySelectorAll('#impactView .impact-images img').forEach(img=>{
+   img.tabIndex=0;img.setAttribute('role','button');img.setAttribute('aria-label','Enlarge: '+img.alt);
+   const show=()=>{priorFocus=img;large.src=img.currentSrc||img.src;large.alt=img.alt;caption.textContent=img.closest('figure')?.querySelector('figcaption')?.textContent||img.alt;box.hidden=false;document.body.classList.add('impact-zoom-open');close.focus();};
+   img.addEventListener('click',show);img.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
+ });
+ close.addEventListener('click',hide);box.addEventListener('click',e=>{if(e.target===box)hide();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!box.hidden)hide();});
+})();
 </script>
 </body>
 </html>
