@@ -42,7 +42,7 @@
       </span>
       The Vision
      </button>
-<button class="nav-link" data-view="instruction">
+<button class="nav-link" data-view="course">▣  Course Structure &amp; Student Experience</button><button class="nav-link" data-view="instruction">
 <span>
        ▤
       </span>
@@ -140,7 +140,7 @@
          →
         </span>
 </button>
-</div>
+<button class="primary" data-view="course" style="margin-left:10px">Tour the Actual Course →</button></div>
 <div aria-hidden="true" class="hero-art"></div>
 </div>
 <div class="section-heading">
@@ -151,7 +151,10 @@
        SELECT A SYSTEM TO EXPLORE →
       </span>
 </div>
-<div class="cards">
+<div class="cards"><button class="card cyan" data-view="course">
+<span class="card-icon">▣</span>
+<h4>Course Structure<br/>&amp; Student Experience</h4>
+<span class="card-arrow">→</span></button>
 <button class="card cyan" data-view="instruction">
 <span class="card-icon">
         ▤
@@ -161,7 +164,6 @@
         <br/>
         Curriculum
        </h4>
-
 <span class="card-arrow">
         →
        </span>
@@ -175,7 +177,6 @@
         <br/>
         Learning
        </h4>
-
 <span class="card-arrow">
         →
        </span>
@@ -189,7 +190,6 @@
         <br/>
         Management
        </h4>
-
 <span class="card-arrow">
         →
        </span>
@@ -203,7 +203,6 @@
         <br/>
         Integration
        </h4>
-
 <span class="card-arrow">
         →
        </span>
@@ -217,28 +216,53 @@
         <br/>
         Classroom
        </h4>
-
 <span class="card-arrow">
         →
        </span>
 </button>
 </div>
-
 </section>
 <section aria-label="The Vision" class="view vision-image-view" id="visionView">
-  <img class="vision-image" src="assets/the-vision.png" alt="The Vision: Canvas 2.0 connects CTE classroom theory and hands-on lab instruction in one seamless system." />
-  <div class="vision-toolbar">
-    <a class="primary vision-course-btn" id="canvasCourseLink" href="https://zyankowski-ops.github.io/Canvas-Calendar/" target="_blank" rel="noopener noreferrer" title="Open the live Canvas Calendar demonstration">📅 Demonstrate My Canvas Calendar ↗</a>
-    <button class="secondary" data-view="dashboard">← Back to Dashboard</button>
-    <button class="primary" data-view="instruction">Next: Instruction &amp; Curriculum →</button>
-  </div>
+<img alt="The Vision: Canvas 2.0 connects CTE classroom theory and hands-on lab instruction in one seamless system." class="vision-image" src="assets/the-vision.png"/>
+<div class="vision-toolbar">
+
+<button class="secondary" data-view="dashboard">← Back to Dashboard</button>
+<button class="primary" data-view="course">Next: Explore the Course →</button>
+</div>
+</section><section aria-label="Course Structure and Student Experience" class="view course-view" id="courseView">
+<div class="eyebrow">CANVAS 2.0 / THE ACTUAL STUDENT EXPERIENCE</div>
+<h2>Course Structure &amp; Student Experience</h2>
+<p class="detail-lead">Follow the same path students use to move from the course homepage to their daily learning activity. These are screenshots of the actual Automotive Technology course.</p>
+<div aria-label="Walkthrough steps" class="tour-steps" role="group">
+<button class="tour-step active" data-step="0" type="button">1 · Homepage</button>
+<button class="tour-step" data-step="1" type="button">2 · Shop Schedule</button>
+<button class="tour-step" data-step="2" type="button">3 · Daily Agenda</button>
+<button class="tour-step" data-step="3" type="button">4 · Electude Lesson</button>
+</div>
+<div class="tour-stage">
+<div class="tour-stage-header"><div><span id="tourCounter">STEP 1 OF 4</span><h3 id="tourTitle">The Course Homepage</h3></div><span class="tour-tag">ACTUAL COURSE SCREENSHOT</span></div>
+<p id="tourDescription">A visual homepage gives students three clear destinations: Grades, Start Here, and Student Resources.</p>
+<div class="tour-image-wrap" id="tourImageWrap">
+<img alt="Actual Canvas Automotive Technology course homepage" id="tourImage" src="assets/course-homepage.png"/>
+<button aria-label="Click Start Here to view the Shop Schedule" class="tour-hotspot" id="tourHotspot" style="left:35%;top:63%;width:30%;height:30%" title="Click Start Here" type="button"><span>Click Start Here →</span></button>
+</div>
+<p class="tour-hint" id="tourHint">Click the highlighted Start Here tile in the screenshot, or select Next Step.</p>
+</div>
+<div class="tour-controls">
+<button class="secondary" id="tourPrevious" type="button">← Previous Step</button>
+<button class="primary" id="tourNext" type="button">Next Step →</button>
+</div>
+<div class="tour-footer-actions">
+<button class="secondary" data-view="vision">← The Vision</button>
+<button class="primary" data-view="instruction">Next Section: Instruction &amp; Curriculum →</button>
+</div>
 </section>
 <section aria-label="Instruction &amp; Curriculum" class="view vision-image-view" id="instructionView">
-  <img class="vision-image" src="assets/instruction2.0.png" alt="Instruction and Curriculum: structured, industry-aligned classroom instruction connected to hands-on technician training." />
-  <div class="vision-toolbar">
-    <button class="secondary" data-view="vision">← Back to The Vision</button>
-    <button class="primary" data-view="learning">Next: Interactive Learning →</button>
-  </div>
+<img alt="Instruction and Curriculum: structured, industry-aligned classroom instruction connected to hands-on technician training." class="vision-image" src="assets/instruction2.0.png"/>
+<div class="vision-toolbar">
+<button class="secondary" data-view="course">← Back to Course Tour</button>
+<button class="primary" data-view="learning">Next: Interactive Learning →</button>
+</div>
 </section>
 <section aria-live="polite" class="view content-view" id="detailView">
 <div class="eyebrow" id="detailEyebrow">
@@ -283,7 +307,34 @@
 </main>
 </div>
 <script>
-   const sections={vision:['THE VISION','Beyond the Traditional LMS','What if Canvas could serve as the central hub for an entire CTE program?','◎','The Canvas 2.0 Concept','A connected classroom experience: instruction, student engagement, operations, and custom-built tools in one familiar place.'],instruction:['INSTRUCTION & CURRICULUM','Instruction That Connects','Daily agendas, Daily Reader activities, Electude lessons, Canvas assessments, and industry-aligned curriculum.','▤','Live Demonstration Coming','We will connect real instructional resources from the Automotive Technology program here.'],learning:['INTERACTIVE LEARNING','Learning by Doing','Real-world decisions and interactive experiences that go beyond a conventional quiz.','◇','Featured Project: Choices','An interactive professional decision-making game built for the Automotive Technology classroom.'],management:['CLASSROOM MANAGEMENT','Accountability by Design','Purpose-built tools that help students practice the routines and responsibilities of a working shop.','☑','Timeclock + Toolbox Inventory','Explore how daily time tracking and tool accountability connect classroom expectations to professional habits.'],automation:['AUTOMATION & INTEGRATION','One Connected Ecosystem','Canvas, GitHub Pages, Google Apps Script, and Sheets working together to support classroom operations.','⬡','Behind the Scenes','We will map the connections and demonstrate the instructor-facing tools that keep the system running.'],ai:['AI IN THE CLASSROOM','From Idea to Implementation','The instructor defines the problem and evaluates the solution. AI helps with design, code, content, and troubleshooting.','✦','AI as a Development Partner','See how iterative prompting, testing, and instructor verification helped turn classroom ideas into functioning applications.'],impact:['PROGRAM IMPACT','What Changes in Practice?','A look at instructional efficiency, student access, accountability, and opportunities for continuous improvement.','▥','Evidence & Outcomes','We will add verified examples and results here rather than claiming improvements without supporting evidence.'],future:["WHAT'S NEXT?",'Your Classroom, Reimagined','The same approach can be adapted for other CTE programs and classroom challenges.','➜','Start with a Problem','What is one repetitive task, instructional challenge, or student experience you would redesign?']};const order=['dashboard',...Object.keys(sections)];function showView(id){if(id!=='dashboard'&&!sections[id])id='dashboard';document.getElementById('dashboard').classList.toggle('active',id==='dashboard');document.getElementById('detailView').classList.toggle('active',id!=='dashboard'&&id!=='vision'&&id!=='instruction');document.getElementById('visionView').classList.toggle('active',id==='vision');document.getElementById('instructionView').classList.toggle('active',id==='instruction');document.querySelectorAll('.nav-link').forEach(b=>{b.classList.toggle('active',b.dataset.view===id);b.setAttribute('aria-current',b.dataset.view===id?'page':'false')});if(id!=='dashboard'&&id!=='vision'&&id!=='instruction'){let d=sections[id];['detailEyebrow','detailTitle','detailIntro','detailSymbol','detailPanelTitle','detailBody'].forEach((key,i)=>document.getElementById(key).textContent=d[i]);document.getElementById('nextBtn').dataset.view=order[(order.indexOf(id)+1)%order.length]}document.getElementById('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});location.hash=id}document.addEventListener('click',e=>{const btn=e.target.closest('[data-view]');if(btn)showView(btn.dataset.view)});document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));document.getElementById('presentBtn').addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen()}else{await document.documentElement.requestFullscreen()}}catch(e){alert('Fullscreen is unavailable in this browser or embedded view. Open the site in a new tab to present.')}});window.addEventListener('hashchange',()=>{let id=location.hash.slice(1)||'dashboard';showView(id)});showView(location.hash.slice(1)||'dashboard');
-  </script>
+   const sections={vision:['THE VISION','Beyond the Traditional LMS','What if Canvas could serve as the central hub for an entire CTE program?','◎','The Canvas 2.0 Concept','A connected classroom experience: instruction, student engagement, operations, and custom-built tools in one familiar place.'],instruction:['INSTRUCTION & CURRICULUM','Instruction That Connects','Daily agendas, Daily Reader activities, Electude lessons, Canvas assessments, and industry-aligned curriculum.','▤','Live Demonstration Coming','We will connect real instructional resources from the Automotive Technology program here.'],learning:['INTERACTIVE LEARNING','Learning by Doing','Real-world decisions and interactive experiences that go beyond a conventional quiz.','◇','Featured Project: Choices','An interactive professional decision-making game built for the Automotive Technology classroom.'],management:['CLASSROOM MANAGEMENT','Accountability by Design','Purpose-built tools that help students practice the routines and responsibilities of a working shop.','☑','Timeclock + Toolbox Inventory','Explore how daily time tracking and tool accountability connect classroom expectations to professional habits.'],automation:['AUTOMATION & INTEGRATION','One Connected Ecosystem','Canvas, GitHub Pages, Google Apps Script, and Sheets working together to support classroom operations.','⬡','Behind the Scenes','We will map the connections and demonstrate the instructor-facing tools that keep the system running.'],ai:['AI IN THE CLASSROOM','From Idea to Implementation','The instructor defines the problem and evaluates the solution. AI helps with design, code, content, and troubleshooting.','✦','AI as a Development Partner','See how iterative prompting, testing, and instructor verification helped turn classroom ideas into functioning applications.'],impact:['PROGRAM IMPACT','What Changes in Practice?','A look at instructional efficiency, student access, accountability, and opportunities for continuous improvement.','▥','Evidence & Outcomes','We will add verified examples and results here rather than claiming improvements without supporting evidence.'],future:["WHAT'S NEXT?",'Your Classroom, Reimagined','The same approach can be adapted for other CTE programs and classroom challenges.','➜','Start with a Problem','What is one repetitive task, instructional challenge, or student experience you would redesign?']};const order=['dashboard','vision','course','instruction','learning','management','automation','ai','impact','future'];function showView(id){if(id!=='dashboard'&&id!=='course'&&!sections[id])id='dashboard';document.getElementById('dashboard').classList.toggle('active',id==='dashboard');document.getElementById('detailView').classList.toggle('active',id!=='dashboard'&&id!=='vision'&&id!=='instruction'&&id!=='course');document.getElementById('visionView').classList.toggle('active',id==='vision');document.getElementById('courseView').classList.toggle('active',id==='course');document.getElementById('instructionView').classList.toggle('active',id==='instruction');document.querySelectorAll('.nav-link').forEach(b=>{b.classList.toggle('active',b.dataset.view===id);b.setAttribute('aria-current',b.dataset.view===id?'page':'false')});if(id!=='dashboard'&&id!=='vision'&&id!=='instruction'&&id!=='course'){let d=sections[id];['detailEyebrow','detailTitle','detailIntro','detailSymbol','detailPanelTitle','detailBody'].forEach((key,i)=>document.getElementById(key).textContent=d[i]);document.getElementById('nextBtn').dataset.view=order[(order.indexOf(id)+1)%order.length]}document.getElementById('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});location.hash=id}document.addEventListener('click',e=>{const btn=e.target.closest('[data-view]');if(btn)showView(btn.dataset.view)});document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));document.getElementById('presentBtn').addEventListener('click',async()=>{try{if(document.fullscreenElement){await document.exitFullscreen()}else{await document.documentElement.requestFullscreen()}}catch(e){alert('Fullscreen is unavailable in this browser or embedded view. Open the site in a new tab to present.')}});window.addEventListener('hashchange',()=>{let id=location.hash.slice(1)||'dashboard';showView(id)});showView(location.hash.slice(1)||'dashboard');
+  
+const tourSlides=[
+ {title:'The Course Homepage',description:'Students enter through a simplified, visual homepage with three primary destinations: Grades, Start Here, and Student Resources.',image:'assets/course-homepage.png',alt:'Automotive Technology course homepage showing Grades, Start Here, and Student Resources',hint:'Select the highlighted Start Here tile to see the weekly schedule.',hotspot:{left:'35%',top:'63%',width:'30%',height:'30%',label:'Click Start Here →'}},
+ {title:'The Shop Schedule',description:'Start Here opens a week-by-week schedule. Each day has a recognizable icon, the current day is highlighted, and closure days are clearly identified.',image:'assets/shop-schedule.png',alt:'MP1 Classwork shop schedule with Week 10 and Week 11, highlighting November 2',hint:'Select the highlighted November 2 tile to open the Daily Agenda.',hotspot:{left:'13.2%',top:'77.5%',width:'17%',height:'21%',label:'Open Today’s Agenda →'}},
+ {title:'Today’s Agenda',description:'The agenda connects today’s assignment, learning objectives, clock-in, and end-of-day responsibilities without losing the context of the shop schedule.',image:'assets/daily-agenda.png',alt:'Today’s Agenda modal with valve adjustment assignment, objectives, and clock-in and clock-out links',hint:'Select the assignment area to continue to an example of the lesson.',hotspot:{left:'17%',top:'31%',width:'43%',height:'9%',label:'View Lesson →'}},
+ {title:'Instructional Activity',description:'Students move from the agenda into their assigned Electude lesson. This example combines a video, technical information, a knowledge check, and visible progress through the activity.',image:'assets/electude-lesson.png',alt:'Electude How To Checking Valve Clearances lesson with instructional video and knowledge-check question',hint:'This is a screenshot of an Electude lesson, not a live copy of the licensed learning platform.',hotspot:null}
+];
+let tourIndex=0;
+function renderTour(){
+ const slide=tourSlides[tourIndex];
+ document.getElementById('tourCounter').textContent='STEP '+(tourIndex+1)+' OF '+tourSlides.length;
+ document.getElementById('tourTitle').textContent=slide.title;
+ document.getElementById('tourDescription').textContent=slide.description;
+ const img=document.getElementById('tourImage');img.src=slide.image;img.alt=slide.alt;
+ document.getElementById('tourHint').textContent=slide.hint;
+ const spot=document.getElementById('tourHotspot');
+ spot.hidden=!slide.hotspot;
+ if(slide.hotspot){Object.assign(spot.style,{left:slide.hotspot.left,top:slide.hotspot.top,width:slide.hotspot.width,height:slide.hotspot.height});spot.querySelector('span').textContent=slide.hotspot.label;}
+ document.querySelectorAll('.tour-step').forEach((btn,i)=>{btn.classList.toggle('active',i===tourIndex);btn.setAttribute('aria-current',i===tourIndex?'step':'false')});
+ document.getElementById('tourPrevious').disabled=tourIndex===0;
+ document.getElementById('tourNext').textContent=tourIndex===tourSlides.length-1?'Restart Tour ↺':'Next Step →';
+}
+document.querySelectorAll('.tour-step').forEach(btn=>btn.addEventListener('click',()=>{tourIndex=Number(btn.dataset.step);renderTour()}));
+document.getElementById('tourPrevious').addEventListener('click',()=>{tourIndex=Math.max(0,tourIndex-1);renderTour()});
+document.getElementById('tourNext').addEventListener('click',()=>{tourIndex=(tourIndex+1)%tourSlides.length;renderTour()});
+document.getElementById('tourHotspot').addEventListener('click',()=>{if(tourIndex<tourSlides.length-1){tourIndex++;renderTour()}});
+renderTour();
+</script>
 </body>
 </html>
