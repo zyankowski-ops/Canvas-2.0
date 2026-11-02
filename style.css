@@ -855,3 +855,28 @@ footer span {
 .learning-launch{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:14px 22px;text-decoration:none;white-space:nowrap;border-radius:9px;background:linear-gradient(100deg,#008dc8,#0367a9);color:white;font-weight:800;box-shadow:0 4px 18px #00a8e533}
 .learning-launch:hover,.learning-launch:focus-visible{filter:brightness(1.15);outline:2px solid #48dfff;outline-offset:3px}
 @media(max-width:850px){.learning-live-panel{flex-direction:column;align-items:stretch}.learning-launch{white-space:normal}}
+
+/* Classroom Management: Timeclock, Toolbox Inventory, and Canvas Modules */
+.management-view{padding:22px 0 36px}
+.management-view h2{font-size:clamp(30px,3.2vw,48px);margin:8px 0 12px}
+.management-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:25px 0}
+.management-card{min-width:0;border:1px solid #21618b;border-radius:17px;background:linear-gradient(155deg,#0e2b49,#071a30);padding:23px;display:flex;flex-direction:column;box-shadow:0 12px 25px #0003}
+.management-icon{font-size:32px;color:#27d9ff;line-height:1.2;margin-bottom:15px}
+.management-kicker{color:#47d8ff;letter-spacing:.12em;font-size:11px;font-weight:800}
+.management-card h3{font-size:25px;margin:9px 0 12px;color:#fff}
+.management-card p{line-height:1.65;color:#d4e4f0;margin:0 0 20px}
+.management-footnote{color:#91b8cf;font-size:13px;margin-top:auto;padding-top:14px;border-top:1px solid #244766}
+.management-link{display:inline-flex;justify-content:center;align-items:center;margin-top:15px;padding:13px 14px;text-align:center;text-decoration:none;border-radius:10px;font-weight:800}
+.management-status{display:inline-block;margin-top:14px;color:#b4cde0;font-size:13px}
+.module-demo{margin:4px 0 12px;display:grid;gap:8px}
+.module-row{display:flex;gap:10px;align-items:center;border:1px solid #2a6285;background:#0c3552;border-radius:10px;padding:11px}
+.module-row>span{color:#4ee3b1;font-size:20px}
+.module-row>div{min-width:0;flex:1}
+.module-row strong{display:block;color:#fff;font-size:13px}
+.module-row small{display:block;color:#a7c8dc;font-size:11px;margin-top:3px}
+.module-row em{font-style:normal;color:#5de3bb;font-size:10px}
+.module-row.locked{background:#18283d;opacity:.78}
+.module-row.locked em{color:#ffcb65}
+.management-callout{border-left:4px solid #23d5ff;background:#0b2a46;padding:18px 22px;border-radius:8px;color:#dcecf8;line-height:1.6;margin-bottom:22px}
+@media(max-width:1150px){.management-grid{grid-template-columns:1fr 1fr}.management-modules{grid-column:1/-1}}
+@media(max-width:700px){.management-grid{grid-template-columns:1fr}.management-modules{grid-column:auto}.management-card{padding:18px}}
