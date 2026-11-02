@@ -805,3 +805,26 @@ footer span {
 .vision-course-note{text-align:center;font-size:12px;color:#9fb6d0;margin-top:12px}
 .vision-course-note code{color:#cce9ff}
 @media(max-width:650px){.vision-image-view{padding:10px 0 24px}.vision-toolbar>*{width:100%}}
+
+
+/* Canvas 2.0 actual course walkthrough */
+.course-view{padding:24px 0 36px}
+.course-view h2{margin:8px 0 12px;font-size:clamp(26px,3vw,42px)}
+.tour-steps{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.tour-step{border:1px solid #244a6b;background:#0b2440;color:#cfe8ff;padding:12px 16px;border-radius:12px;cursor:pointer;font:inherit;font-weight:700}
+.tour-step.active,.tour-step:hover{background:#075e94;border-color:#20d9ff;color:white}
+.tour-stage{background:linear-gradient(160deg,#0a1e35,#0c2946);border:1px solid #275579;border-radius:18px;padding:clamp(14px,2.2vw,26px);box-shadow:0 12px 35px #0004}
+.tour-stage-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.tour-stage-header h3{margin:5px 0;font-size:clamp(20px,2.4vw,30px)}
+#tourCounter,.tour-tag{color:#48dfff;font-size:12px;letter-spacing:.11em;font-weight:800}
+#tourDescription{color:#d4e5f3;line-height:1.6}
+.tour-image-wrap{position:relative;max-width:1100px;margin:18px auto 0;background:#fff;border-radius:10px;overflow:hidden}
+.tour-image-wrap img{display:block;width:100%;height:auto}
+.tour-hotspot{position:absolute;border:3px solid #ffd348;background:#ffd34829;border-radius:12px;cursor:pointer;display:flex;align-items:flex-end;justify-content:center;padding:4px}
+.tour-hotspot:hover,.tour-hotspot:focus-visible{background:#ffd34855;outline:3px solid #fff}
+.tour-hotspot span{display:block;background:#082e51;color:white;font-weight:800;font-size:clamp(10px,1.1vw,15px);padding:5px 9px;border-radius:7px;box-shadow:0 3px 10px #0008}
+.tour-hotspot[hidden]{display:none}
+.tour-hint{font-size:14px;color:#b9d7e9;margin:14px 0 0}
+.tour-controls,.tour-footer-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+.tour-controls button:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:700px){.tour-step{flex:1 1 42%;font-size:13px;padding:10px 8px}.tour-hotspot span{font-size:10px;padding:3px}.course-view{padding-top:8px}}
