@@ -901,3 +901,17 @@ footer span {
 .impact-lightbox p{color:#e0f5ff;font-size:15px;text-align:center;margin:0}
 .impact-lightbox-close{position:absolute;right:24px;top:18px;border:1px solid #5ce5ff;border-radius:9px;background:#12334b;color:#fff;padding:11px 17px;font:inherit;cursor:pointer}
 .impact-zoom-open{overflow:hidden}
+
+/* Dashboard polish: compact descriptive cards and reliable standard-mode banner */
+#dashboard .auto-title { box-sizing:border-box; height:auto; min-height:clamp(170px,22vh,215px); padding:24px 34px 20px; justify-content:center; overflow:hidden; }
+#dashboard .auto-title .eyebrow { position:relative; z-index:2; line-height:1.35; margin:0 0 8px; }
+#dashboard .auto-title h1 { position:relative; z-index:2; font-size:clamp(49px,5.6vw,92px); line-height:1.02; margin:0 0 8px; }
+#dashboard .auto-title p { position:relative; z-index:2; margin:0; line-height:1.4; }
+#dashboard .hero h2 { font-size:clamp(29px,3vw,43px); }
+#dashboard .cards .card { min-height:185px; height:auto; justify-content:flex-start; padding:20px 20px 45px; }
+#dashboard .cards .card-icon { margin-bottom:12px; font-size:29px; line-height:1; }
+#dashboard .cards .card h4 { font-size:clamp(17px,1.3vw,20px); line-height:1.2; margin:0 0 10px; }
+#dashboard .cards .card-description { color:#c5d8e9; font-size:12px; line-height:1.45; max-width:95%; margin:0; font-weight:400; }
+#dashboard .cards .card-arrow { bottom:13px; right:13px; }
+.nav-link[data-view="course"] span:last-child { font-size:inherit; }
+@media(max-width:700px){ #dashboard .auto-title{min-height:170px;padding:20px} #dashboard .cards .card{min-height:155px} }
