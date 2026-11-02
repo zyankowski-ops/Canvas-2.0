@@ -880,3 +880,10 @@ footer span {
 .management-callout{border-left:4px solid #23d5ff;background:#0b2a46;padding:18px 22px;border-radius:8px;color:#dcecf8;line-height:1.6;margin-bottom:22px}
 @media(max-width:1150px){.management-grid{grid-template-columns:1fr 1fr}.management-modules{grid-column:1/-1}}
 @media(max-width:700px){.management-grid{grid-template-columns:1fr}.management-modules{grid-column:auto}.management-card{padding:18px}}
+
+/* Demo-only login details for public presentation */
+.demo-login{margin-top:14px;padding:14px 15px;border:1px solid #2b799e;border-radius:12px;background:#0b2c46;color:#e8f7ff}
+.demo-login strong{display:block;color:#6ee7ff;font-size:14px;margin-bottom:9px}
+.demo-login>div{display:flex;flex-wrap:wrap;gap:10px 20px}
+.demo-login code{font-size:15px;font-weight:800;color:#fff;background:#143f61;padding:3px 6px;border-radius:5px}
+.demo-login small{display:block;margin-top:10px;color:#a8c6d7;line-height:1.4}
